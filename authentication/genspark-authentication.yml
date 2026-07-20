@@ -1,0 +1,42 @@
+generated: '2026-07-19'
+method: searched
+source: >-
+  https://www.genspark.ai/.well-known/openid-configuration (OAuth authorization-server
+  metadata for Genspark's hosted MCP server)
+docs: https://www.genspark.ai/.well-known/openid-configuration
+summary:
+  types:
+  - oauth2
+  oauth2_flows:
+  - authorizationCode
+  api_key_in: []
+  notes: >-
+    Genspark's public programmatic surface is its hosted MCP server, authorized with
+    OAuth 2.1 (authorization_code grant with PKCE S256, plus refresh_token). Dynamic
+    client registration (RFC 7591) is offered at the registration_endpoint, and public
+    clients (token_endpoint_auth_method "none") are supported alongside client_secret_post.
+schemes:
+- name: mcpOAuth
+  type: oauth2
+  issuer: https://www.genspark.ai
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.genspark.ai/api/mcp/oauth/authorize
+    tokenUrl: https://www.genspark.ai/api/mcp/oauth/token
+    refreshUrl: https://www.genspark.ai/api/mcp/oauth/token
+    revocationUrl: https://www.genspark.ai/api/mcp/oauth/revoke
+    pkce: S256
+    scopes:
+      mcp:tools:read: List available MCP tools
+      mcp:tools:call: Invoke MCP tools
+      mcp:resources:read: Read MCP resources
+      mcp:prompts:read: Read MCP prompts
+  grant_types:
+  - authorization_code
+  - refresh_token
+  token_endpoint_auth_methods:
+  - none
+  - client_secret_post
+  dynamic_client_registration: https://www.genspark.ai/api/mcp/oauth/register
+  sources:
+  - well-known/genspark-openid-configuration.json
