@@ -1,0 +1,43 @@
+generated: '2026-07-19'
+method: searched
+status: published
+source: >-
+  https://www.genspark.ai/.well-known/openid-configuration (OAuth authorization-server
+  metadata advertising Genspark's hosted MCP server) + live probe of
+  https://www.genspark.ai/api/mcp (HTTP 403 without an authorized OAuth token, as expected)
+server:
+  name: genspark
+  description: >-
+    Genspark's hosted (remote) Model Context Protocol server, exposing Genspark's AI
+    agent tools, resources, and prompts to MCP-capable clients over HTTP, gated by
+    OAuth 2.1 with PKCE and dynamic client registration.
+  transport: http
+  url: https://www.genspark.ai/api/mcp
+authorization:
+  type: oauth2
+  spec: OAuth 2.1 (authorization_code + PKCE S256, refresh_token)
+  metadata: https://www.genspark.ai/.well-known/openid-configuration
+  issuer: https://www.genspark.ai
+  authorization_endpoint: https://www.genspark.ai/api/mcp/oauth/authorize
+  token_endpoint: https://www.genspark.ai/api/mcp/oauth/token
+  revocation_endpoint: https://www.genspark.ai/api/mcp/oauth/revoke
+  registration_endpoint: https://www.genspark.ai/api/mcp/oauth/register
+  scopes_supported:
+  - mcp:tools:read
+  - mcp:tools:call
+  - mcp:resources:read
+  - mcp:prompts:read
+  code_challenge_methods_supported:
+  - S256
+  token_endpoint_auth_methods_supported:
+  - none
+  - client_secret_post
+capabilities:
+- tools
+- resources
+- prompts
+tools: []
+notes: >-
+  Tool/resource/prompt listing requires an authorized OAuth session, so the concrete
+  tool surface is not enumerable unauthenticated. The scopes_supported values confirm
+  the server offers tools (read + call), resources (read), and prompts (read).

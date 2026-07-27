@@ -1,0 +1,28 @@
+generated: '2026-07-19'
+method: searched
+source: well-known/genspark-openid-configuration.json
+docs: https://www.genspark.ai/.well-known/openid-configuration
+schemes:
+- name: mcpOAuth
+  source: well-known/genspark-openid-configuration.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://www.genspark.ai/api/mcp/oauth/authorize
+    tokenUrl: https://www.genspark.ai/api/mcp/oauth/token
+scopes:
+- scope: mcp:tools:read
+  description: List / discover the MCP tools the Genspark server exposes.
+  flows: [authorizationCode]
+  sources: [well-known/genspark-openid-configuration.json]
+- scope: mcp:tools:call
+  description: Invoke (call) Genspark MCP tools.
+  flows: [authorizationCode]
+  sources: [well-known/genspark-openid-configuration.json]
+- scope: mcp:resources:read
+  description: Read MCP resources exposed by the Genspark server.
+  flows: [authorizationCode]
+  sources: [well-known/genspark-openid-configuration.json]
+- scope: mcp:prompts:read
+  description: Read MCP prompts exposed by the Genspark server.
+  flows: [authorizationCode]
+  sources: [well-known/genspark-openid-configuration.json]

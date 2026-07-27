@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: well-known/genspark-openid-configuration.json
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    Published OAuth 2.0 authorization-server metadata with authorization/token/revocation
+    endpoints and authorization_code + refresh_token grant types.
+- id: oauth2.1-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256 (PKCE required per OAuth 2.1).
+- id: rfc7591-dynamic-client-registration
+  conforms: true
+  evidence: registration_endpoint published at /api/mcp/oauth/register.
+- id: rfc7009-token-revocation
+  conforms: true
+  evidence: revocation_endpoint published at /api/mcp/oauth/revoke.
+- id: rfc8414-authorization-server-metadata
+  conforms: true
+  evidence: >-
+    Authorization-server metadata document served (via /.well-known/openid-configuration);
+    issuer, endpoints, scopes_supported, and grant_types_supported all present.
+- id: model-context-protocol
+  conforms: true
+  evidence: >-
+    Hosted MCP server at /api/mcp advertising tools/resources/prompts capabilities via
+    mcp:* OAuth scopes.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No OpenAPI or documented error envelope available to confirm.

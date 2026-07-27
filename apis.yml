@@ -1,8 +1,28 @@
 aid: genspark
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/genspark.png
 name: Genspark
-description: 'Genspark is a company surfaced as a portfolio company of emergence-capital and added to
-  the API Evangelist network as a stub for enrichment. Sector: ai. This profile is a lead awaiting the
-  enrichment pipeline.'
+description: >-
+  Genspark is an all-in-one AI workspace and autonomous "Super Agent" platform that plans
+  and executes multi-step tasks on a user's behalf. It bundles a suite of AI agent tools —
+  deep research, AI slides, AI sheets, AI docs, AI chat, a "Call For Me" voice agent, and a
+  built-in AI browser — into a single natural-language workspace, alongside companion
+  products such as Genspark Claw, Speakly, GenClipboard, and GenTerminal and native iOS and
+  Android apps. For developers and agents, Genspark operates a hosted, remote Model Context
+  Protocol (MCP) server at /api/mcp that exposes its tools, resources, and prompts over HTTP,
+  gated by OAuth 2.1 (authorization_code with PKCE, refresh tokens, and dynamic client
+  registration). Genspark is backed by Emergence Capital.
 url: https://raw.githubusercontent.com/api-evangelist/genspark/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -12,11 +32,35 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
 tags:
 - Company
 - Ai
-apis: []
+- Artificial Intelligence
+- AI Agents
+- MCP
+- Model Context Protocol
+- Productivity
+- Automation
+- Search
+- Workspace
+apis:
+- name: Genspark MCP Server
+  description: >-
+    Genspark's hosted (remote) Model Context Protocol server, exposing Genspark's AI agent
+    tools, resources, and prompts to MCP-capable clients over HTTP under OAuth 2.1.
+  humanURL: https://www.genspark.ai
+  baseURL: https://www.genspark.ai/api/mcp
+  tags:
+  - MCP
+  - AI Agents
+  properties:
+  - type: MCPServer
+    url: mcp/genspark-mcp.yml
+  - type: Authentication
+    url: authentication/genspark-authentication.yml
+  - type: OAuthScopes
+    url: scopes/genspark-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -25,3 +69,30 @@ maintainers:
 common:
 - type: Website
   url: https://www.genspark.ai
+- type: MCPServer
+  url: mcp/genspark-mcp.yml
+- type: Authentication
+  url: authentication/genspark-authentication.yml
+- type: OAuthScopes
+  url: scopes/genspark-scopes.yml
+- type: WellKnown
+  url: well-known/genspark-well-known.yml
+- type: Conformance
+  url: conformance/genspark-conformance.yml
+- type: DomainSecurity
+  url: security/genspark-domain-security.yml
+- type: LLMsTxt
+  url: llms/genspark-llms.txt
+- type: Blog
+  url: https://www.genspark.ai/blog
+- type: Support
+  url: https://www.genspark.ai/helpcenter
+- type: TermsOfService
+  url: https://www.genspark.ai/terms
+- type: PrivacyPolicy
+  url: https://www.genspark.ai/privacy
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

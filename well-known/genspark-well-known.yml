@@ -1,0 +1,21 @@
+generated: '2026-07-19'
+method: searched
+source: live probes of https://www.genspark.ai/.well-known/*
+host: https://www.genspark.ai
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: genspark-openid-configuration.json
+  note: >-
+    OAuth 2.0 authorization-server metadata for Genspark's hosted MCP server
+    (issuer https://www.genspark.ai; MCP OAuth endpoints under /api/mcp/oauth/*).
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/oauth-protected-resource
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

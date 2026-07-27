@@ -1,0 +1,34 @@
+# Genspark
+
+> Genspark is an all-in-one AI workspace and autonomous "Super Agent" platform. It plans and executes multi-step tasks and bundles AI agent tools for research, slides, sheets, docs, chat, calling, and a built-in AI browser. Genspark exposes a hosted Model Context Protocol (MCP) server so external agents can discover and call its tools over HTTP under OAuth. Backed by Emergence Capital.
+
+## Agent / MCP surface
+- Hosted MCP server (HTTP): https://www.genspark.ai/api/mcp
+- OAuth authorization-server metadata: https://www.genspark.ai/.well-known/openid-configuration
+- MCP OAuth scopes: mcp:tools:read, mcp:tools:call, mcp:resources:read, mcp:prompts:read
+
+## Product
+- Genspark (AI workspace / Super Agent): https://www.genspark.ai
+- Blog: https://www.genspark.ai/blog
+- Help Center: https://www.genspark.ai/helpcenter
+- For Business: https://www.genspark.ai/business
+- iOS app: https://apps.apple.com/us/app/id6739554054
+- Android app: https://play.google.com/store/apps/details?id=ai.mainfunc.genspark
+
+## Related products
+- Genspark Claw: https://www.genspark.ai/genspark-claw
+- Speakly: https://speakly.ai
+- GenClipboard: https://genclipboard.ai/
+- GenTerminal: https://genterminal.ai/
+
+## Legal
+- Terms of Service: https://www.genspark.ai/terms
+- Privacy Policy: https://www.genspark.ai/privacy
+
+## Repo artifacts (API Evangelist enrichment)
+- MCP server profile: mcp/genspark-mcp.yml
+- Authentication (OAuth): authentication/genspark-authentication.yml
+- OAuth scopes: scopes/genspark-scopes.yml
+- Well-known index: well-known/genspark-well-known.yml
+- Conformance: conformance/genspark-conformance.yml
+- Domain security: security/genspark-domain-security.yml
