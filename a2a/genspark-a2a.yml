@@ -1,0 +1,33 @@
+generated: '2026-07-28'
+method: probed
+source: https://genspark.ai/.well-known/agent.json
+description: 'A2A Agent Card observed at /.well-known/agent.json on genspark.ai. Grade is measured against
+  the A2A 1.0.0 AgentCard object: ''conformant'' passes every structural check, ''near-conformant'' is
+  correctly shaped but omits optional fields, ''flavored'' fails a hard check and is an agent card in
+  spirit rather than in schema. Provider-published by construction — served from the provider''s own host;
+  nothing here is derived or generated.'
+discovery:
+  path: /.well-known/agent.json
+  canonical: false
+  host: genspark.ai
+conformance:
+  spec: A2A 1.0.0
+  grade: conformant
+  protocol_version: '1.0'
+  preferred_transport: JSONRPC
+  deviations: []
+card:
+  name: Genspark
+  description: Genspark is an AI-powered agent that delivers real-time, comprehensive answers by searching
+    the web, generating images, writing code, analyzing data, creating presentations, and more.
+  url: https://www.genspark.ai/a2a
+  version: 1.0.0
+  documentation_url: null
+  skills: 2
+  file: genspark-agent-card.json
+x-evidence:
+  fetched: '2026-07-28'
+  url: https://genspark.ai/.well-known/agent.json
+  http_status: 200
+  content_type: application/json
+  note: Verbatim body saved alongside this manifest. No field inferred.

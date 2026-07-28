@@ -1,0 +1,95 @@
+{
+  "name": "Genspark",
+  "description": "Genspark is an AI-powered agent that delivers real-time, comprehensive answers by searching the web, generating images, writing code, analyzing data, creating presentations, and more.",
+  "protocolVersion": "1.0",
+  "url": "https://www.genspark.ai/a2a",
+  "preferredTransport": "JSONRPC",
+  "version": "1.0.0",
+  "provider": {
+    "organization": "Genspark",
+    "url": "https://www.genspark.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "extensions": [
+      {
+        "uri": "https://cloud.google.com/marketplace/docs/partners/ai-agents/setup-dcr",
+        "params": {
+          "target_url": "https://www.genspark.ai/a2a/dcr"
+        }
+      }
+    ]
+  },
+  "defaultInputModes": [
+    "application/json"
+  ],
+  "defaultOutputModes": [
+    "application/json"
+  ],
+  "skills": [
+    {
+      "id": "super_agent",
+      "name": "Super Agent",
+      "description": "Full-featured AI agent with web search, code execution, image generation, data analysis, and presentation creation. Use this skill for complex tasks that may require tool use, real-time information, or multi-step reasoning. This is the default skill when no skill is specified.",
+      "tags": [
+        "search",
+        "web",
+        "research",
+        "code",
+        "image",
+        "data",
+        "analysis",
+        "presentation",
+        "agent"
+      ],
+      "examples": [
+        "What are the latest developments in quantum computing?",
+        "Write a Python function that implements binary search and test it",
+        "Generate a watercolor painting of a mountain sunset",
+        "Analyze this CSV data and create a summary chart",
+        "Create a 10-slide pitch deck about AI trends in healthcare"
+      ]
+    },
+    {
+      "id": "agent_chat",
+      "name": "Chat Agent",
+      "description": "Conversational AI agent for general Q&A, writing, summarization, brainstorming, and creative tasks. Lightweight mode optimized for fast conversational interactions.",
+      "tags": [
+        "chat",
+        "assistant",
+        "writing",
+        "creative",
+        "conversation"
+      ],
+      "examples": [
+        "Summarize this article in 3 bullet points",
+        "Help me draft a professional email to my team",
+        "Compare the pros and cons of React vs Vue.js"
+      ]
+    }
+  ],
+  "supportsAuthenticatedExtendedCard": false,
+  "securitySchemes": {
+    "oauth2": {
+      "type": "oauth2",
+      "flows": {
+        "authorizationCode": {
+          "authorizationUrl": "https://www.genspark.ai/a2a/oauth/authorize",
+          "tokenUrl": "https://www.genspark.ai/a2a/oauth/token",
+          "refreshUrl": "https://www.genspark.ai/a2a/oauth/token",
+          "scopes": {
+            "agent:query": "Send queries to the Genspark agent."
+          }
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "oauth2": [
+        "agent:query"
+      ]
+    }
+  ]
+}
