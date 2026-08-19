@@ -1,16 +1,14 @@
 generated: '2026-07-19'
 method: searched
 status: published
-source: >-
-  https://www.genspark.ai/.well-known/openid-configuration (OAuth authorization-server
-  metadata advertising Genspark's hosted MCP server) + live probe of
-  https://www.genspark.ai/api/mcp (HTTP 403 without an authorized OAuth token, as expected)
+source: https://www.genspark.ai/.well-known/openid-configuration (OAuth authorization-server metadata
+  advertising Genspark's hosted MCP server) + live probe of https://www.genspark.ai/api/mcp (HTTP 403
+  without an authorized OAuth token, as expected)
 server:
   name: genspark
-  description: >-
-    Genspark's hosted (remote) Model Context Protocol server, exposing Genspark's AI
-    agent tools, resources, and prompts to MCP-capable clients over HTTP, gated by
-    OAuth 2.1 with PKCE and dynamic client registration.
+  description: Genspark's hosted (remote) Model Context Protocol server, exposing Genspark's AI agent
+    tools, resources, and prompts to MCP-capable clients over HTTP, gated by OAuth 2.1 with PKCE and dynamic
+    client registration.
   transport: http
   url: https://www.genspark.ai/api/mcp
 authorization:
@@ -37,7 +35,15 @@ capabilities:
 - resources
 - prompts
 tools: []
-notes: >-
-  Tool/resource/prompt listing requires an authorized OAuth session, so the concrete
-  tool surface is not enumerable unauthenticated. The scopes_supported values confirm
-  the server offers tools (read + call), resources (read), and prompts (read).
+notes: Tool/resource/prompt listing requires an authorized OAuth session, so the concrete tool surface
+  is not enumerable unauthenticated. The scopes_supported values confirm the server offers tools (read
+  + call), resources (read), and prompts (read).
+deployment:
+  mode: none
+  endpoint: https://www.genspark.ai/api/mcp
+  verified: probed
+  probe: dead
+  note: the endpoint this manifest claimed did not answer; recorded as none rather than deleted so the
+    claim stays auditable
+  checked: '2026-08-12'
+  source: catalog MCP census
