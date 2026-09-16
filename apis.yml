@@ -115,6 +115,8 @@ common:
   url: https://www.genspark.ai/terms
 - type: PrivacyPolicy
   url: https://www.genspark.ai/privacy
+- type: Contact
+  url: mailto:support@genspark.ai
 x-enrichment:
   date: '2026-07-19'
   status: backfilled
